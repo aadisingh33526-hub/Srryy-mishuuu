@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Mishuu 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: linear-gradient(135deg, #ffe0ed, #fff5fa, #f0ddff);
+  color: #773d59;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.9);
+  padding: 28px 22px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 15px 45px #d76d9630;
+  border: 1px solid #ffc9df;
+  position: relative;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 55px;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.15); }
+}
+
+h1 {
+  color: #d94e88;
+  font-size: 34px;
+  margin: 12px 0;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.message {
+  background: #fff0f6;
+  border-radius: 18px;
+  padding: 17px;
+  margin: 20px 0;
+  border: 1px dashed #ff9fc3;
+}
+
+button {
+  border: none;
+  padding: 13px 19px;
+  margin: 7px 3px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sorry {
+  background: #ef679b;
+  color: white;
+}
+
+.time {
+  background: #ffe5f0;
+  color: #a43d6c;
+}
+
+#reply {
+  margin-top: 18px;
+  color: #c13f78;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.floating {
+  position: fixed;
+  bottom: -40px;
+  animation: floatUp 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+.small {
+  color: #bd829c;
+  font-size: 11px;
+  margin-top: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<span class="floating" style="left:10%;animation-delay:0s">💗</span>
+<span class="floating" style="left:30%;animation-delay:2s">🌸</span>
+<span class="floating" style="left:75%;animation-delay:1s">💕</span>
+<span class="floating" style="left:90%;animation-delay:4s">✨</span>
+
+<div class="card">
+
+  <div class="heart">🥹💗</div>
+
+  <p style="letter-spacing:2px;color:#d94e88">
+    A LITTLE MESSAGE FOR YOU
+  </p>
+
+  <h1>I'm Sorry, Mishuu</h1>
+
+  <p>Heyyy Mishuuu 🥺🎀</p>
+
+  <div class="message">
+    <p>
+      I'm genuinely sorry for upsetting you.
+      I never wanted to hurt you or make you feel bad. 💗
+    </p>
+
+    <p>
+      I know that just saying sorry won't magically
+      fix everything, but I really want you to know
+      that your feelings matter to me.
+    </p>
+
+    <p>
+      If I made a mistake, I want to understand it
+      and do better. You don't have to forgive me
+      instantly. I just hope we can talk when you're ready. 🫶🏻
+    </p>
+
+    <p><b>Please don't stay upset with me forever, Mishuuu. 🌷</b></p>
+  </div>
+
+  <p>Can we please be okay again? 🥹💌</p>
+
+  <button class="sorry" onclick="forgive()">
+    Okay, I forgive you 💗
+  </button>
+
+  <button class="time" onclick="later()">
+    I need some time 🌸
+  </button>
+
+  <div id="reply"></div>
+
+  <div class="small">
+    Made with a sorry heart, just for Mishuu ♡
+  </div>
+
+</div>
+
+<script>
+function forgive() {
+  document.getElementById("reply").innerHTML =
+    "THANK YOUUU MISHUU 😭💗🌷<br>" +
+    "Sending you the biggest virtual hug 🫂💕";
+
+  for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("span");
+    heart.innerHTML = ["💗","💕","🌸","✨","💖"][
+      Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = Math.random() * 100 + "vh";
+    heart.style.fontSize = "24px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "5";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 2500);
+  }
+}
+
+function later() {
+  document.getElementById("reply").innerHTML =
+    "It's okay, Mishuu 🌷💗<br>" +
+    "Take your time. I'll respect your feelings. 🫶🏻";
+}
+</script>
+
+</body>
+</html>
